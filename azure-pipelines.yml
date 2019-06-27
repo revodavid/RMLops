@@ -7,11 +7,13 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-16.04'
+  
+container: 'rocker/r-ver:3.6.0'  
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: Rscript -e 'print(1:10)'
+  displayName: 'Run R expression'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
