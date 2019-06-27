@@ -19,6 +19,9 @@ stages:
     - script: Rscript -e 'R.version'
       displayName: 'Confirm R version'
 
+    - script: Rscript install-packages.R
+      displayName 'Intstall R packages'
+
     - script: Rscript train-model.R
       displayName: 'Train model'
   
