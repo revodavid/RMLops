@@ -12,8 +12,14 @@ pool:
 container: 'rocker/r-ver:3.6.0'  
 
 steps:
-- script: Rscript -e 'print(1:10)'
-  displayName: 'Run R expression'
+- script: Rscript -e 'R.version'
+  displayName: 'Confirm R version'
+  
+- script: Rscript -e train-model.R
+  displayName: 'Train model'
+  
+- publish: $(System.DefaultWorkingDirectory)/model.Rd
+  artifact: TrainedModel
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
