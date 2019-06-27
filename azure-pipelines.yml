@@ -14,7 +14,7 @@ container: 'rocker/r-ver:3.6.0'
 steps:
 - script: Rscript -e 'R.version'
   displayName: 'Confirm R version'
-  
+
 - script: Rscript train-model.R
   displayName: 'Train model'
   
