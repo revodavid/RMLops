@@ -19,6 +19,7 @@ stages:
     - script: |
         echo Working directory:
         echo `pwd`
+        chmod u+w /usr/local/lib/R/site-library
       displayName: 'Shell checks'
 
     - script: Rscript -e 'R.version'
