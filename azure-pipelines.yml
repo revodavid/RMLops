@@ -6,9 +6,6 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-16.04'
-
 stages:
 - stage: Build
   displayName: Build and push stage
