@@ -16,6 +16,11 @@ stages:
       vmImage: 'ubuntu-16.04'
     container: 'rocker/r-ver:3.6.0'  
     steps:
+    - script: |
+        echo Working directory:
+        echo `pwd`
+      displayName: 'Shell checks'
+
     - script: Rscript -e 'R.version'
       displayName: 'Confirm R version'
 
@@ -28,7 +33,3 @@ stages:
     - publish: $(System.DefaultWorkingDirectory)/model.Rd
       artifact: TrainedModel
   
-    - script: |
-        echo Add other tasks to build, test, and deploy your project.
-        echo See https://aka.ms/yaml
-      displayName: 'Run a multi-line script'
