@@ -6,31 +6,22 @@
 trigger:
 - master
 
-stages:
-- stage: Train
-  displayName: Train model
-  jobs: 
-  - job: Train
-    displayName: Train model with R
-    pool: 
-      vmImage: 'ubuntu-16.04'
-    container: 'rocker/r-ver:3.6.0'  
-    steps:
-    - script: |
-        echo Working directory:
-        echo `pwd`
-        sudo chmod u+w /usr/local/lib/R/site-library
-      displayName: 'Shell checks'
-
-    - script: Rscript -e 'R.version'
-      displayName: 'Confirm R version'
-
-    - script: Rscript install-packages.R
-      displayName: 'Intstall R packages'
-
-    - script: Rscript train-model.R
-      displayName: 'Train model'
+pool:
+  vmImage: 'ubuntu-16.04'
   
-    - publish: $(System.DefaultWorkingDirectory)/model.Rd
-      artifact: TrainedModel
+container: 'rocker/r-ver:3.6.0'  
+
+steps:
+- script: Rscript -e 'R.version'
+  displayName: 'Confirm R version'
+
+- script: Rscript train-model.R
+  displayName: 'Train model'
   
+- publish: $(System.DefaultWorkingDirectory)/model.Rd
+  artifact: TrainedModel
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
