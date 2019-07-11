@@ -1,5 +1,6 @@
 ## ensure user library exists, or else R will attempt to install to /usr/local/lib
 print(Sys.getenv("R_LIBS_USER"))
+print(getwd())
 
 if(!dir.exists(Sys.getenv("R_LIBS_USER"))) {
  dir.create(Sys.getenv("R_LIBS_USER"), recursive = TRUE) }
