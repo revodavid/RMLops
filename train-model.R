@@ -11,4 +11,4 @@ dtrain <- xgb.DMatrix(data = train$data, label = train$label)
 bst <- xgboost(data = dtrain, max_depth = 2, eta = 1, nthread = 2, nrounds = 2, 
                objective = "binary:logistic", verbose = 2)
 
-saveRDS(mpg.reg, file="model.Rd")
+saveRDS(bst, file="model.Rd")
