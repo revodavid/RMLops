@@ -1,7 +1,7 @@
 ## toy model, using mtcars
 # mpg.reg <- lm(mpg ~ disp + hp + factor(cyl), data=mtcars)
 
-library(xgboost)
+library(xgboost, lib.loc="library")
 
 data(agaricus.train, package='xgboost')
 
