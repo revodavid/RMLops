@@ -12,7 +12,7 @@ You will need an Azure Subscription to replicate these examples. For new subscri
 
 Slides from the presentation [A DevOps process for deploying R to production](https://github.com/revodavid/RMLops/blob/master/earl2019slides.pdf) are available. Presented at the [EARL 2019 conference](http://www.earlconf.com/) in London, September 11 2019.
 
-Slides from the presentation [A DevOps process for deploying R to production](https://github.com/revodavid/RMLops/blob/master/user2019slides.pdf) are available. Presented at the [useR!2019 conference](http://www.user2019.fr/) in Toulouse, July 12 2019.
+Slides from the presentation [A DevOps process for deploying R to production](https://github.com/revodavid/RMLops/blob/master/user2019slides.pdf) are available. Presented at the [useR!2019 conference](http://www.user2019.fr/) in Toulouse, July 12 2019. A [video recording](https://youtu.be/o6sIB0MJyOs) of this presentation is available.
 
 ## Resources
 
